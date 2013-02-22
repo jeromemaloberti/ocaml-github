@@ -169,6 +169,8 @@ type repo_commit = {
   url: string;
 } <ocaml field_prefix="repo_commit_">
 
+type repo_commits = repo_commit list
+
 type repo_tag = {
   name: string;
   commit: repo_commit;
@@ -259,3 +261,10 @@ type repo = {
   has_wiki: bool;
   has_downloads: bool;
 } <ocaml field_prefix="repo_">
+
+type pull_request = {
+  title: string;
+  ?body: string option;
+  base: string;
+  head: string;
+} <ocaml field_prefix="pull_request_">
